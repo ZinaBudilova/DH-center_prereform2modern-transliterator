@@ -79,7 +79,7 @@ method Processor.process_text(text, show, delimiters, check_brackets, print_log=
 
 * __show: boolean__
 
-&emsp;Включает в результат заменённые слова в дореформенной орфографии. Если параметр `check_brackets=True`, то замененные слова в любом случае показываются, независимо от значения параметра show.
+&emsp;Включает в результат заменённые слова в дореформенной орфографии. Если параметр `check_brackets=True`, то заменённые слова показываются при любом значении параметра show.
 
 * __delimiters: list из трех элементов типа unicode__
 
@@ -102,9 +102,10 @@ delimiters=[u'<choice><reg>', u'</reg><orig>', u'</orig></choice>']
 
 * __check_brackets: boolean__
 
-&emsp;Отображает редакторскую правку.
+&emsp;Помечает редакторскую правку.
 ```python
-text=u'Пройдя комнату, такъ [называемую], офиціанскую', delimiters=[u'', u'{', u'}']
+text=u'Пройдя комнату, такъ [называемую], офиціанскую'
+delimiters=[u'', u'{', u'}']
 check_brackets=True
 ```
 ```python
