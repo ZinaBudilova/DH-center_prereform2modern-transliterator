@@ -97,7 +97,9 @@ delimiters=[u'<choice><reg>', u'</reg><orig>', u'</orig></choice>']
 text=u'Пройдя комнату, такъ [называемую], офиціанскую', delimiters=[u'', u'{', u'}']
 check_brackets=True
 ```
-> Пройдя комнату, так{такъ} <choice original_editorial_correction='[называемую]'><sic></sic><corr>называемую</corr></choice>, официанскую{офицiанскую}
+```python
+Пройдя комнату, так{такъ} <choice original_editorial_correction='[называемую]'><sic></sic><corr>называемую</corr></choice>, официанскую{офицiанскую}
+```
 
 * __print_log: boolean__
 
