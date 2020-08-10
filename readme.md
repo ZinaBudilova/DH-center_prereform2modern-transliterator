@@ -92,7 +92,7 @@ text=u"примеръ"
 пример{примеръ}
 ```
 
-&emsp;Или, например, теги XML (про использование тега <choice> см. [здесь](https://en.wikipedia.org/wiki/Text_Encoding_Initiative#Choice_tag)):
+&emsp;Или, например, теги XML (про использование тега \<choice> см. [здесь](https://en.wikipedia.org/wiki/Text_Encoding_Initiative#Choice_tag)):
 ```python
 delimiters=[u'<choice><reg>', u'</reg><orig>', u'</orig></choice>']
 ```
