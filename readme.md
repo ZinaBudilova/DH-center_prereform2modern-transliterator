@@ -8,11 +8,15 @@ $ python2.7 prereform2modern/translit_from_string.py "Онъ стоялъ под
 ```
 
 ```python
-['prereform2modern/translit_from_string.py', '\xd0\x9e\xd0\xbd\xd1\x8a \xd1\x81\xd1\x82\xd0\xbe\xd1\x8f\xd0\xbb\xd1\x8a \xd0\xbf\xd0\xbe\xd0\xb4\xd0\xbb\xd1\xa3 \xd0\xbf\xd0\xb8\xd1\x81\xd1\x8c\xd0\xbc\xd0\xb5\xd0\xbd\xd0\xbd\xd0\xb0\xd0\xb3\xd0\xbe \xd1\x81\xd1\x82\xd0\xbe\xd0\xbb\xd0\xb0']
+['prereform2modern/translit_from_string.py', '\xd0\x9e\xd0\xbd\xd1\x8a \xd1\x81\xd1\x82\xd0\xbe\xd1\x8f\xd0\xbb\xd1\x8a 
+\xd0\xbf\xd0\xbe\xd0\xb4\xd0\xbb\xd1\xa3 \xd0\xbf\xd0\xb8\xd1\x81\xd1\x8c\xd0\xbc\xd0\xb5\xd0\xbd\xd0\xbd\xd0\xb0\xd0\xb3\xd0\xbe 
+\xd1\x81\xd1\x82\xd0\xbe\xd0\xbb\xd0\xb0']
 
-./prereform2modern/word_tokenize.py:27: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
+./prereform2modern/word_tokenize.py:27: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - 
+interpreting them as being unequal
   if litera in SYMBOLS['symbols']:
-./prereform2modern/word_tokenize.py:41: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal`
+./prereform2modern/word_tokenize.py:41: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - 
+interpreting them as being unequal`
   `if litera in SYMBOLS['numbers']:
   
 Он{Онъ} стоял{стоялъ} подле{подлѣ} письменного{письменнаго} стола
@@ -56,7 +60,8 @@ $ python3 prereform2modern/translit_from_string.py -t "Онъ"
 $ python2.7
 >>> from process import Processor
 >>> text = u'офицiанскую'  # например
->>> t, change, w_edits, _json = Processor.process_text(text, show=False, delimiters=[u'', u'{', u'}'], check_brackets=False, print_log=False)
+>>> t, change, w_edits, _json = Processor.process_text(text, show=False, delimiters=[u'', u'{', u'}'], check_brackets=False, 
+print_log=False)
 >>> print t
 ```
 ```
@@ -102,7 +107,8 @@ text=u'Пройдя комнату, такъ [называемую], офиці�
 check_brackets=True
 ```
 ```python
-Пройдя комнату, так{такъ} <choice original_editorial_correction='[называемую]'><sic></sic><corr>называемую</corr></choice>, официанскую{офицiанскую}
+Пройдя комнату, так{такъ} <choice original_editorial_correction='[называемую]'><sic></sic><corr>называемую</corr></choice>, 
+официанскую{офицiанскую}
 ```
 
 * __print_log: boolean__
