@@ -78,10 +78,9 @@ method Processor.process_text(text, show, delimiters, check_brackets, print_log=
 delimiters=[u'', u'{', u'}']
 text=u"примеръ"
 ```
-
-```
+`
 пример{примеръ}
-```
+`
 &emsp;Или, например, теги XML:
 ```python
 delimiters=[u'<choice><reg>', u'</reg><orig>', u'</orig></choice>']
