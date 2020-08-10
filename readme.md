@@ -58,7 +58,7 @@ $ python2.7
 ```
 официанскую
 ```
----
+
 ### &emsp;&emsp;Параметры
 ```
 method Processor.process_text(text, show, delimiters, check_brackets, print_log=True)
@@ -136,7 +136,7 @@ i и выражением
 ѳ ф выражением
 EL выражением
 ```
----
+
 ### &emsp;&emsp;Выдача
 * __text: unicode__
 
