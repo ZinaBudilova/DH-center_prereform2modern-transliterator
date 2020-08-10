@@ -15,6 +15,7 @@ $ python2.7 prereform2modern/translit_from_string.py "Онъ стоялъ под
 ./prereform2modern/word_tokenize.py:27: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - 
 interpreting them as being unequal
   if litera in SYMBOLS['symbols']:
+  
 ./prereform2modern/word_tokenize.py:41: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - 
 interpreting them as being unequal`
   `if litera in SYMBOLS['numbers']:
