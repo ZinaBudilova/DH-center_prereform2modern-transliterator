@@ -33,10 +33,10 @@ $ python2.7 prereform2modern/translit_from_string.py -t "Онъ"
 $ python3 prereform2modern/translit_from_string.py "Онъ"
 ```
 
-```python
+`python
 ['prereform2modern/translit_from_string.py', 'Онъ']
 Он{Онъ}
-```
+`
 &emsp;В Py3, кажется, сохраняется проблема с юникодом в объекте json:
 ```python
 $ python3 prereform2modern/translit_from_string.py -t "Онъ"
