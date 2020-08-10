@@ -26,7 +26,7 @@ $ python2.7 prereform2modern/translit_from_string.py -t "Онъ"
 ```
 {"0": {"type": "word", "old_plain_word": null, "word": "\u041e\u043d", "old_word": "\u041e\u043d\u044a", "plain_word": null}}
 ```
-
+---
 ### &emsp;&emsp;Как это должно работать в Py3:
 ```
 $ python3 prereform2modern/translit_from_string.py "Онъ"
@@ -44,8 +44,8 @@ $ python3 prereform2modern/translit_from_string.py -t "Онъ"
 ['prereform2modern/translit_from_string.py', '-t', 'Онъ']
 {"0": {"word": "\u041e\u043d", "old_word": "\u041e\u043d\u044a", "type": "word", "plain_word": null, "old_plain_word": null}}
 ```
-
-## &emsp;&emsp;Использование программы из интерпретатора
+---
+### &emsp;&emsp;Использование программы из интерпретатора
 
 
 ```
@@ -58,7 +58,7 @@ $ python2.7
 ```
 официанскую
 ```
-
+---
 ### &emsp;&emsp;Параметры
 ```
 method Processor.process_text(text, show, delimiters, check_brackets, print_log=True)
@@ -136,7 +136,7 @@ i и выражением
 ѳ ф выражением
 EL выражением
 ```
-
+---
 ### &emsp;&emsp;Выдача
 * __text: unicode__
 
