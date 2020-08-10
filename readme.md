@@ -160,7 +160,7 @@ EL выражением
 
 * __wrong_edits: list__
 
-&emsp;Пустой список :)
+&emsp;Пустой список :v:
 
 * __str_json: str__
 ```python
