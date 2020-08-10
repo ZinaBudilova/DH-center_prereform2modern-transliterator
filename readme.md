@@ -7,7 +7,7 @@
 $ python2.7 prereform2modern/translit_from_string.py "Онъ стоялъ подлѣ письменнаго стола"
 ```
 
-```python
+`
 ['prereform2modern/translit_from_string.py', '\xd0\x9e\xd0\xbd\xd1\x8a \xd1\x81\xd1\x82\xd0\xbe\xd1\x8f\xd0\xbb\xd1\x8a \xd0\xbf\xd0\xbe\xd0\xb4\xd0\xbb\xd1\xa3 \xd0\xbf\xd0\xb8\xd1\x81\xd1\x8c\xd0\xbc\xd0\xb5\xd0\xbd\xd0\xbd\xd0\xb0\xd0\xb3\xd0\xbe \xd1\x81\xd1\x82\xd0\xbe\xd0\xbb\xd0\xb0']
 
 ./prereform2modern/word_tokenize.py:27: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
@@ -16,16 +16,16 @@ $ python2.7 prereform2modern/translit_from_string.py "Онъ стоялъ под
   if litera in SYMBOLS['numbers']:
 
 Он{Онъ} стоял{стоялъ} подле{подлѣ} письменного{письменнаго} стола
-```
+`
 
 &emsp;Флаг __-t__ позволяет получить результат в формате __json__
 ```python
 $ python2.7 prereform2modern/translit_from_string.py -t "Онъ"
 ```
 
-```python
+`
 {"0": {"type": "word", "old_plain_word": null, "word": "\u041e\u043d", "old_word": "\u041e\u043d\u044a", "plain_word": null}}
-```
+`
 
 ### &emsp;&emsp;Как это должно работать в Py3:
 ```python
@@ -40,10 +40,10 @@ $ python3 prereform2modern/translit_from_string.py "Онъ"
 ```python
 $ python3 prereform2modern/translit_from_string.py -t "Онъ"
 ```
-```python
+`
 ['prereform2modern/translit_from_string.py', '-t', 'Онъ']
 {"0": {"word": "\u041e\u043d", "old_word": "\u041e\u043d\u044a", "type": "word", "plain_word": null, "old_plain_word": null}}
-```
+`
 ---
 ### &emsp;&emsp;Использование программы из интерпретатора
 
@@ -55,9 +55,9 @@ $ python2.7
 >>> t, change, w_edits, _json = Processor.process_text(text, show=False, delimiters=[u'', u'{', u'}'], check_brackets=False, print_log=False)
 >>> print t
 ```
-```python
+`
 официанскую
-```
+`
 
 ### &emsp;&emsp;Параметры
 ```python
@@ -81,13 +81,14 @@ text=u"примеръ"
 `
 пример{примеръ}
 `
+
 &emsp;Или, например, теги XML:
 ```python
 delimiters=[u'<choice><reg>', u'</reg><orig>', u'</orig></choice>']
 ```
-```
+`
 <choice><reg>пример</reg><orig>примеръ</orig></choice>
-```
+`
 
 * __check_brackets: boolean__
 
