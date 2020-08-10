@@ -19,28 +19,28 @@ $ python2.7 prereform2modern/translit_from_string.py "Онъ стоялъ под
 ```
 
 &emsp;Флаг __-t__ позволяет получить результат в формате __json__
-```
+```python
 $ python2.7 prereform2modern/translit_from_string.py -t "Онъ"
 ```
 
-```
+```python
 {"0": {"type": "word", "old_plain_word": null, "word": "\u041e\u043d", "old_word": "\u041e\u043d\u044a", "plain_word": null}}
 ```
 
 ### &emsp;&emsp;Как это должно работать в Py3:
-```
+```python
 $ python3 prereform2modern/translit_from_string.py "Онъ"
 ```
 
-```
+```python
 ['prereform2modern/translit_from_string.py', 'Онъ']
 Он{Онъ}
 ```
 &emsp;В Py3, кажется, сохраняется проблема с юникодом в объекте json:
-```
+```python
 $ python3 prereform2modern/translit_from_string.py -t "Онъ"
 ```
-```
+```python
 ['prereform2modern/translit_from_string.py', '-t', 'Онъ']
 {"0": {"word": "\u041e\u043d", "old_word": "\u041e\u043d\u044a", "type": "word", "plain_word": null, "old_plain_word": null}}
 ```
@@ -48,7 +48,7 @@ $ python3 prereform2modern/translit_from_string.py -t "Онъ"
 ### &emsp;&emsp;Использование программы из интерпретатора
 
 
-```
+```python
 $ python2.7
 >>> from process import Processor
 >>> text = u'офицiанскую'  # например
@@ -60,7 +60,7 @@ $ python2.7
 ```
 
 ### &emsp;&emsp;Параметры
-```
+```python
 method Processor.process_text(text, show, delimiters, check_brackets, print_log=True)
 ```
 * __text: unicode__
@@ -74,7 +74,7 @@ method Processor.process_text(text, show, delimiters, check_brackets, print_log=
 * __delimiters: list из трех элементов типа unicode__
 
 &emsp;Используется для обозначения заменённых слов. Первый элемент помещается перед новым словом, а вторые два элемента выделяют заменённое слово. Так, можно использовать скобки:
-```
+```python
 delimiters=[u'', u'{', u'}']
 text=u"примеръ"
 ```
@@ -83,7 +83,7 @@ text=u"примеръ"
 пример{примеръ}
 ```
 &emsp;Или, например, теги XML:
-```
+```python
 delimiters=[u'<choice><reg>', u'</reg><orig>', u'</orig></choice>']
 ```
 ```
@@ -93,23 +93,24 @@ delimiters=[u'<choice><reg>', u'</reg><orig>', u'</orig></choice>']
 * __check_brackets: boolean__
 
 &emsp;Отображает редакторскую правку.
+```python
+text=u'Пройдя комнату, такъ [называемую], офиціанскую', delimiters=[u'', u'{', u'}']
+check_brackets=True
 ```
-text=u'Пройдя комнату, такъ [называемую], офиціанскую', delimiters=[u'', u'{', u'}'], check_brackets=True
-```
-```
+```python
 Пройдя комнату, так{такъ} <choice original_editorial_correction='[называемую]'><sic></sic><corr>называемую</corr></choice>, официанскую{офицiанскую}
 ```
 
 * __print_log: boolean__
 
 &emsp;Отображает замены, которые выполняет программа. Через пробел: символ старой орфографии, символ новой орфографии, слово после замены.
-```
+```python
 print_log=True
 ```
-```
+```python
 text = u'офицiанскую'
 ```
-```
+```python
 ѣ е офицiанскую
 чьк чк офицiанскую
 ъи ы офицiанскую
@@ -121,11 +122,11 @@ i и официанскую
 EL официанскую
 ````
 
-```
+```python
 text=u'выраженіемъ'
 ```
 
-```
+```python
 ѣ е выраженiем
 чьк чк выраженiем
 ъи ы выраженiем
@@ -151,10 +152,10 @@ EL выражением
 &emsp;Пустой список :)
 
 * __str_json: str__
-```
+```python
 text=u'офицiанскую'
 ```
-```
+```python
 '{"0": {"type": "word", "old_plain_word": null, "word": u"официанскую", "old_word": u"офицiанскую", "plain_word": null}}'
 ```
 
