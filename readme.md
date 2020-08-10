@@ -26,7 +26,7 @@ $ python2.7 prereform2modern/translit_from_string.py -t "Онъ"
 ```
 {"0": {"type": "word", "old_plain_word": null, "word": "\u041e\u043d", "old_word": "\u041e\u043d\u044a", "plain_word": null}}
 ```
----
+
 ### &emsp;&emsp;Как это должно работать в Py3:
 ```
 $ python3 prereform2modern/translit_from_string.py "Онъ"
