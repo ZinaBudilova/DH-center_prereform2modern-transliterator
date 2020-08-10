@@ -108,7 +108,7 @@ check_brackets=True
 print_log=True
 ```
 ```python
-text = u'офицiанскую'
+text=u'офицiанскую'
 ```
 ```python
 ѣ е офицiанскую
