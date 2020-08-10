@@ -55,7 +55,7 @@ $ python2.7
 >>> t, change, w_edits, _json = Processor.process_text(text, show=False, delimiters=[u'', u'{', u'}'], check_brackets=False, print_log=False)
 >>> print t
 ```
-```
+```python
 официанскую
 ```
 
