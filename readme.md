@@ -20,8 +20,7 @@ $ python3 prereform2modern/translit_from_string.py -t "Онъ"
 
 ```python
 ['prereform2modern/translit_from_string.py', '-t', 'Онъ']
-{"0": {"word": "Он", "old_word": "Онъ", "type": "word", "plain_word": null, 
-"old_plain_word": null}}
+{"0": {"word": "Он", "old_word": "Онъ", "type": "word", "plain_word": null, "old_plain_word": null}}
 ```
 
 ### &emsp;&emsp;Запуск из интерпретатора:
