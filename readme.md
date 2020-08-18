@@ -25,9 +25,8 @@ $ python3 prereform2modern/translit_from_string.py -t "Онъ"
 
 ### &emsp;&emsp;Запуск из интерпретатора:
 ```python
-$ python2.7
 >>> from process import Processor
->>> text = 'офицiанскую'  # например
+>>> text = 'офицiанскую' 
 >>> t, change, w_edits, _json = Processor.process_text(text, show=False, delimiters=['', '{', '}'], 
 check_brackets=False, print_log=False)
 >>> print t
