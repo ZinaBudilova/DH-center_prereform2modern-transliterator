@@ -27,7 +27,7 @@ $ python3 prereform2modern/translit_from_string.py -t "Онъ"
 ```python
 $ python2.7
 >>> from process import Processor
->>> text = u'офицiанскую'  # например
+>>> text = 'офицiанскую'  # например
 >>> t, change, w_edits, _json = Processor.process_text(text, show=False, delimiters=[u'', u'{', u'}'], 
 check_brackets=False, print_log=False)
 >>> print t
@@ -52,8 +52,8 @@ method Processor.process_text(text, show, delimiters, check_brackets, print_log=
 
 &emsp;Используется для обозначения заменённых слов. Первый элемент помещается перед новым словом, а другие два элемента выделяют заменённое слово. Так, можно использовать скобки:
 ```python
-delimiters=[u'', u'{', u'}']
-text=u"примеръ"
+delimiters=['', '{', '}']
+text="примеръ"
 ```
 ```python
 пример{примеръ}
@@ -61,7 +61,7 @@ text=u"примеръ"
 
 &emsp;Или, например, теги XML (про использование тега \<choice> см. [здесь](https://en.wikipedia.org/wiki/Text_Encoding_Initiative#Choice_tag)):
 ```python
-delimiters=[u'<choice><reg>', u'</reg><orig>', u'</orig></choice>']
+delimiters=['<choice><reg>', '</reg><orig>', '</orig></choice>']
 ```
 ```python
 <choice><reg>пример</reg><orig>примеръ</orig></choice>
@@ -71,8 +71,8 @@ delimiters=[u'<choice><reg>', u'</reg><orig>', u'</orig></choice>']
 
 &emsp;Помечает редакторскую правку.
 ```python
-text=u'Пройдя комнату, такъ [называемую], офиціанскую'
-delimiters=[u'', u'{', u'}']
+text='Пройдя комнату, такъ [называемую], офиціанскую'
+delimiters=['', '{', '}']
 check_brackets=True
 ```
 ```python
@@ -87,7 +87,7 @@ check_brackets=True
 print_log=True
 ```
 ```python
-text=u'офицiанскую'
+text='офицiанскую'
 ```
 ```python
 ѣ е офицiанскую
@@ -102,7 +102,7 @@ EL официанскую
 ````
 
 ```python
-text=u'выраженіемъ'
+text='выраженіемъ'
 ```
 
 ```python
@@ -128,9 +128,9 @@ EL выражением
 
 * __str_json: str__
 ```python
-text=u'офицiанскую'
+text='офицiанскую'
 ```
 ```python
-'{"0": {"type": "word", "old_plain_word": null, "word": u"официанскую", "old_word": u"офицiанскую", 
+'{"0": {"type": "word", "old_plain_word": null, "word": "официанскую", "old_word": "офицiанскую", 
 "plain_word": null}}'
 ```
