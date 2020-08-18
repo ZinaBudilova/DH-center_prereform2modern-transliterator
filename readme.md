@@ -1,39 +1,98 @@
 # Prereform2modern
-#### Преобразует текст из дореформенной орфографии в современную. Работает в Py3.  
+#### Преобразует текст из дореформенной орфографии в современную. Работает в Py3.
+#### [Ссылка на Pypi](https://test.pypi.org/project/prereform2modern/)
 ---
+### &emsp;&emsp;Установка
+&emsp;При установке не в колабе не забудьте создать виртуальное окружение, чтобы не засорять системные файлы компьютера.
+```python
+!pip install -i https://test.pypi.org/simple/ prereform2modern==1.0.5
+```
 
 ### &emsp;&emsp;Запуск из командной строки:
+&emsp;Длинный способ
 ```python
-$ python3 prereform2modern/translit_from_string.py "Онъ"
+!python -m prereform2modern.translit_from_string.py "Онъ стоялъ подлѣ письменнаго стола"
+```
+```
+Он стоял подле письменного стола
+```
+
+&emsp;Короткий способ
+```python
+!translit "Онъ стоялъ подлѣ письменнаго стола"
+```
+
+&emsp;Флаг __-t__ отображает изменённые слова в старой орфографии.
+```python
+!translit -t "Онъ стоялъ подлѣ письменнаго стола"
 ```
 
 ```python
-['prereform2modern/translit_from_string.py', 'Онъ']
-
-Он{Онъ}
-```
-
-&emsp;Флаг __-t__ позволяет получить результат в формате __json__.
-```python
-$ python3 prereform2modern/translit_from_string.py -t "Онъ"
-```
-
-```python
-['prereform2modern/translit_from_string.py', '-t', 'Онъ']
-{"0": {"word": "Он", "old_word": "Онъ", "type": "word", "plain_word": null, "old_plain_word": null}}
+Он{Онъ} стоял{стоялъ} подле{подлѣ} письменного{письменнаго} стола
 ```
 
 ### &emsp;&emsp;Запуск из интерпретатора:
 ```python
-from process import Processor
-text = 'офицiанскую' 
-t, change, w_edits, _json = Processor.process_text(text, show=False, delimiters=['', '{', '}'], 
-check_brackets=False, print_log=False)
-print t
+from prereform2modern import Processor
+```
+```python
+orig_text = "Онъ стоялъ подлѣ письменнаго стола"
+```
+
+```python
+text, changes, s_json = Processor.process_text(
+  orig_text, 
+  show=False, 
+  delimiters=False, 
+  check_brackets=False)
+```
+
+### &emsp;&emsp;Выдача
+* __text: unicode__
+
+&emsp;Преобразованный текст.
+
+```python
+print(text)
 ```
 ```
-официанскую
+Он стоял подле письменного стола
 ```
+
+* __changes: unicode__
+
+&emsp;Произведенные изменения.
+
+```python
+print(changes)
+```
+```
+Онъ --> Он
+стоялъ --> стоял
+подлѣ --> подле
+письменнаго --> письменного
+```
+
+* __str_json: str__
+
+&emsp;Сведения о всех словах и символах в файле json.
+
+```python
+import json
+json.loads(s_json)
+```
+```python
+{'0': {'old_word': 'Онъ', 'type': 'word', 'word': 'Он'},
+'1': {'old_word': '', 'type': 'punct', 'word': ' '},
+'2': {'old_word': 'стоялъ', 'type': 'word', 'word': 'стоял'},
+'3': {'old_word': '', 'type': 'punct', 'word': ' '},
+'4': {'old_word': 'подлѣ', 'type': 'word', 'word': 'подле'},
+'5': {'old_word': '', 'type': 'punct', 'word': ' '},
+'6': {'old_word': 'письменнаго', 'type': 'word', 'word': 'письменного'},
+'7': {'old_word': '', 'type': 'punct', 'word': ' '},
+'8': {'old_word': '', 'type': 'word', 'word': 'стола'}}
+```
+
 
 ### &emsp;&emsp;Параметры
 ```python
@@ -77,59 +136,4 @@ check_brackets=True
 ```python
 Пройдя комнату, так{такъ} <choice original_editorial_correction='[называемую]'><sic></sic>
 <corr>называемую</corr></choice>, официанскую{офицiанскую}
-```
-
-* __print_log: boolean__
-
-&emsp;Отображает замены, которые выполняет программа. Через пробел: символ старой орфографии, символ новой орфографии, слово после замены.
-```python
-print_log=True
-```
-```python
-text='офицiанскую'
-```
-```python
-ѣ е офицiанскую
-чьк чк офицiанскую
-ъи ы офицiанскую
-чьн чн офицiанскую
-ияся иеся офицiанскую
-i и официанскую
-щию щью официанскую
-ѳ ф официанскую
-EL официанскую
-````
-
-```python
-text='выраженіемъ'
-```
-
-```python
-ѣ е выраженiем
-чьк чк выраженiем
-ъи ы выраженiем
-чьн чн выраженiем
-ияся иеся выраженiем
-i и выражением
-щию щью выражением
-ѳ ф выражением
-EL выражением
-```
-
-### &emsp;&emsp;Выдача
-* __text: unicode__
-
-&emsp;Преобразованный текст.
-
-* __changes: unicode__
-
-&emsp;Произведенные изменения в виде "офицiанскую --> официанскую".
-
-* __str_json: str__
-```python
-text='офицiанскую'
-```
-```python
-'{"0": {"type": "word", "old_plain_word": null, "word": "официанскую", "old_word": "офицiанскую", 
-"plain_word": null}}'
 ```
