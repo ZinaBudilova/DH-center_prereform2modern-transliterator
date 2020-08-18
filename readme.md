@@ -23,7 +23,6 @@ $ python3 prereform2modern/translit_from_string.py -t "Онъ"
 {"0": {"word": "Он", "old_word": "Онъ", "type": "word", "plain_word": null, 
 "old_plain_word": null}}
 ```
----
 
 ### &emsp;&emsp;Запуск из интерпретатора:
 ```python
@@ -128,10 +127,6 @@ EL выражением
 
 &emsp;Произведенные изменения в виде "офицiанскую --> официанскую".
 
-* __wrong_edits: list__
-
-&emsp;Пустой список :v:
-
 * __str_json: str__
 ```python
 text=u'офицiанскую'
@@ -140,6 +135,3 @@ text=u'офицiанскую'
 '{"0": {"type": "word", "old_plain_word": null, "word": u"официанскую", "old_word": u"офицiанскую", 
 "plain_word": null}}'
 ```
-
-### &emsp;&emsp;Ключи old_plain_word и plain_word
-&emsp;NULL :v:
