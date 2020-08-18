@@ -28,7 +28,7 @@ $ python3 prereform2modern/translit_from_string.py -t "Онъ"
 $ python2.7
 >>> from process import Processor
 >>> text = 'офицiанскую'  # например
->>> t, change, w_edits, _json = Processor.process_text(text, show=False, delimiters=[u'', u'{', u'}'], 
+>>> t, change, w_edits, _json = Processor.process_text(text, show=False, delimiters=['', '{', '}'], 
 check_brackets=False, print_log=False)
 >>> print t
 ```
